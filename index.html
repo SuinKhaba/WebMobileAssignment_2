@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AngularJS App</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="controllers/aboutController.js"></script>
+  <script src="controllers/hobbiesController.js"></script>
+  <script src="controllers/familyController.js"></script>
+  <script src="controllers/educationController.js"></script>
+</head>
+<body class="App" ng-controller="MainController">
+  <header>
+    <h1>
+      Assignment 2 using
+      <img src="assets/angular-logo.svg" alt="AngularJS Logo" class="react-logo" />
+    </h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li>
+        <button ng-click="setActive('about')" ng-class="{ active: isActive('about') }">
+          About Me
+        </button>
+      </li>
+      <li>
+        <button ng-click="setActive('hobbies')" ng-class="{ active: isActive('hobbies') }">
+          Hobbies
+        </button>
+      </li>
+      <li>
+        <button ng-click="setActive('family')" ng-class="{ active: isActive('family') }">
+          Family
+        </button>
+      </li>
+      <li>
+        <button ng-click="setActive('education')" ng-class="{ active: isActive('education') }">
+          Education
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="content" ng-include="getActiveView()"></div>
+</body>
+</html>
